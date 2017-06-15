@@ -1,0 +1,448 @@
+<html>
+	<head>
+		<title>個人履歷表-第26組</title>
+		<style type="text/css">
+		@font-face{
+				font-family:新字體;
+				src:url("WCL-07.ttf");
+			}
+		nav{
+				border:2px solid black;
+				text-align:center;
+				height:10%;
+				background-color:black;
+				color:white;
+				float:left;
+				width:100%;
+				position:fixed;
+				z-index:2;
+			}
+		#name{
+			
+			font-weight:bold;
+			font-size:20px;
+			margin-top:8px;
+		}
+		body{
+			background-color:gray;
+			color:white;
+			margin:0px;
+			font-family:新字體;
+		}
+		#bar{
+			
+			font-weight:bold;
+		}
+		.floated{float: left;}
+		a{text-decoration: none;
+			color: white;
+		}
+		a:hover{color:red;}
+		a:hover i{color:white;}
+		span{font-size:50px;
+			color: black;}
+
+		.imghover:hover{
+			width:750px; height:500px;
+		}
+		.maildiv{
+			width:100%;
+		}
+		th img{width: 250px; height:150px;}
+		
+		caption{padding-top:80px;}
+			c {
+				font-size:24px;
+				float:left;
+				width:100%; 
+				height:75px; 
+				overflow:scroll;
+				font-family:新字體;
+				text-align:justified;
+			}
+		#myBtn {
+		display: none;
+		position: fixed;
+		bottom: 20px;
+		right: 30px;
+		z-index: 99;
+		border: none;
+		outline: none;
+		background-color: #555;
+		color: white;
+		cursor: pointer;
+		padding: 15px;
+		border-radius: 10px;
+		}
+		.abgne_tip_gallery_block {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 250px;
+		overflow: hidden;
+		position: relative;
+		float:left;
+	}
+
+	.abgne_tip_gallery_block .caption {
+		position: absolute;
+		bottom: 0;
+		width: 280px;	/* .abgne_tip_gallery_block 的寬 - .caption 的左右 padding */
+		padding-top: 15px;
+		padding-bottom:30px;
+		padding-left:20px;
+		padding-right:20px;
+		cursor: pointer;
+		color: #fff;
+		background: gray;
+
+	}
+	.abgne_tip_gallery_block .caption h2 {
+		margin: 0;
+		padding: 0px 0px 15px;
+	}
+	.abgne_tip_gallery_block img {
+		width:300px;
+	}
+	
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- bxSlider Javascript file -->
+		<script src="slider/jquery.bxslider.min.js"></script>
+		<!-- bxSlider CSS file -->
+		<link href="slider/jquery.bxslider.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel = "stylesheet" type = "text/css" href = "animation.css">
+		<script>
+			$(document).ready(function(){
+				$('.bxslider').bxSlider({
+					slideWidth: 2000,
+					minSlides: 1,
+					maxSlides: 1,
+					slideMargin: 10,
+					auto: true,
+					pause: 5000
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function(){
+				// Add scrollspy to <body>
+				$('body').scrollspy({target: ".navbar", offset: 50});   
+
+				// Add smooth scrolling on all links inside the navbar
+				$("#myNavbar a").on('click', function(event) {
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {			
+					// Prevent default anchor click behavior
+					event.preventDefault();
+
+					// Store hash
+					var hash = this.hash;
+
+					// Using jQuery's animate() method to add smooth page scroll
+					// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+					$('html, body').animate({
+					scrollTop: $(hash).offset().top
+					}, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+					});
+				}  // End if
+				});
+			});
+	</script>
+	<script>
+// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("myBtn").style.display = "block";
+			} else {
+				document.getElementById("myBtn").style.display = "none";
+			}
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<script>
+			$(function(){
+	// 預設標題區塊 .abgne_tip_gallery_block .caption 的 top
+	var _titleHeight = 55;
+	$('.abgne_tip_gallery_block').each(function(){
+		// 先取得區塊的高及標題區塊等資料
+		var $this = $(this), 
+			_height = $this.height(), 
+			$caption = $('.caption', $this),
+			_captionHeight = $caption.outerHeight(true),
+			_speed = 200;
+ 
+		// 當滑鼠移動到區塊上時
+		$this.hover(function(){
+			// 讓 $caption 往上移動
+			$caption.stop().animate({
+				top: _height - _captionHeight
+			}, _speed);
+		}, function(){
+			// 讓 $caption 移回原位
+			$caption.stop().animate({
+				top: _height - _titleHeight
+			}, _speed);
+		});
+	});
+});
+</script>
+	</head>
+
+	<body>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+		<a href = "index.html">
+		<nav id="myNavbar"><img src="logo.png" class="floated" style="width:72px;height:60px;vertical-align:bottom;"><label id="name" class="floated">吉天偉<br>Wei</label></a>
+			<label style="position:fixed;top:25px;left:640px;z-index:3;font-family:新字體;"><a href = "#about-section">基本資料</a></label>
+			<label style="position:fixed;top:25px;left:750px;z-index:3;"><a href = "#study-section">學歷</a></label>
+			<label style="position:fixed;top:25px;left:830px;z-index:3;"><a href = "#experience-section">經歷</a></label>
+			<label style="position:fixed;top:25px;left:910px;z-index:3;"><a href = "#skills-section">專業技能</a></label>
+			<label style="position:fixed;top:25px;left:1020px;z-index:3;"><a href = "#work-section">作品</a></label>
+			<label style="position:fixed;top:25px;left:1100px;z-index:3;"><a href = "#english-section">英文能力</a></label>
+			<label style="position:fixed;top:25px;left:1210px;z-index:3;"><a href = "#call-section">聯絡我</a></label>
+		</nav>
+		
+		<div style="width:100%;height:100%;background-image:url('首頁背景.jpg');background-repeat:no-repeat;background-size:100% 100%;">
+			<center><div style="position:absolute;top:50%;left:25%; width:50%; height:20px; opacity: 0.5;"><ul class="bxslider">
+				<li><span>吉天仲、吳華偉</span><br><label style = "color:black;">1995.06.16 - 國立臺灣海洋大學資訊工程學系</label></li>
+				<li><span>網頁程式設計-期末專題</span><br><label style = "color:black;">105學年度</label></li>
+				<li><span>個人履歷表</span><br><label style = "color:black;">第26組</label></li>
+			</ul></div></center>
+		</div>
+		
+		<section id="about-section">
+		<center><table border = "1" width = "50%" style="background-color:gray;color:white;border-color:black;">
+			<caption><h1>基本資料</h1><hr width = "50%"><br></caption>
+				<tr>
+					<th style="background-color:gray;color:white">中文名字</th>
+					<th colspan = "2" style="font-family:微軟正黑體;">吉天偉</th>
+					<th>英文名字</th>
+					<th colspan = "2" style="font-family:微軟正黑體;">JI TIAN WEI</th>
+					<th rowspan = "5"><img src="123.png" style="width:170px;height:140px;"></th>
+				</tr>
+				<tr>
+					<th>國籍</th>
+					<th style="font-family:微軟正黑體;">中華民國</th>
+					<th>性別</th>
+					<th style="font-family:微軟正黑體;">男</th>
+					<th>身分證字號</th>
+					<th style="font-family:微軟正黑體;">F123456789</th>
+					
+				</tr>
+				<tr>
+					<th>身高</th>
+					<th style="font-family:微軟正黑體;">183</th>
+					<th>體重</th>
+					<th style="font-family:微軟正黑體;">73</th>
+					<th>出生年月日</th>
+					<th style="font-family:微軟正黑體;">1995/06/16</th>
+				</tr>
+				<tr>
+					<th>住家</th>
+					<th colspan = "2" style="font-family:微軟正黑體;">02-2462-2192</th>
+					<th>手機</th>
+					<th colspan = "2" style="font-family:微軟正黑體;">0918304999</th>
+				</tr>
+				<tr>
+					<th>信箱</th>
+					<th colspan = "5" style="font-family:微軟正黑體;">hsnu131206@gmail.com</th>
+				</tr>
+				<tr>
+					<th>住址</th>
+					<th colspan = "7" style="font-family:微軟正黑體;">202基隆市中正區北寧路2號</th>
+				</tr>
+		</table></center>
+		<br><br><br>
+		</section>
+	
+		<section id="study-section" style="background-color:white;color:black;">
+		<center>
+		<br><br><br><br>
+		<h1>學歷</h1><hr width = "50%" ><br>
+		<div style="width:100%">
+		<table>
+		<tr>
+		<td>
+		<a href ="http://www.mjes.ntpc.edu.tw/default_page.asp" target= "_blank">
+		<div class="abgne_tip_gallery_block">
+			<img src="5.jpg"/> 
+		<div class="caption">
+			<h2>明志國民小學</h2>
+			<div class="desc">
+				擔任系統管理師一職。任教樂齡班及三到六年級電腦課程，協助系統開發、伺服器管理、攝影拍照、影片製作等業務。
+			</div>
+		</div>
+		</div></a>
+		</td>
+		<td>
+		<a href ="http://www.yhjh.ntpc.edu.tw/default_page.asp" target= "_blank">
+		<div class="abgne_tip_gallery_block">
+			<img src="6.jpg"/> 
+		<div class="caption">
+			<h2>市立義學國民中學</h2>
+			<div class="desc">
+				擔任圖書資訊與檔案研究所，國科會計畫，合作式探究式學習(Inquiry-based learning)教學系統cWISE(UC Berkeley)資訊團隊一職。
+			</div>
+		</div>
+		</div></a>
+		</td>
+		<td>
+		<a href ="http://www.hcsh.ntpc.edu.tw/ischool/publish_page/55/" target= "_blank">
+		<div class="abgne_tip_gallery_block">
+			<img src="7.jpg"/> 
+		<div class="caption">
+			<h2>市立新莊高中</h2>
+			<div class="desc">
+				擔任圖書資訊與檔案研究所，教育部通識教育計畫，開放式課程(Open courseware)資訊團隊一職。
+			</div>
+		</div>
+		</div></a>
+		</td>
+		<td>
+		<a href ="http://www.ntou.edu.tw/bin/home.php" target= "_blank">
+		<div class="abgne_tip_gallery_block">
+			<img src="8.jpg"/> 
+		<div class="caption">
+			<h2>國立臺灣海洋大學</h2>
+			<div class="desc">
+				大學二年級暑期擔任校內電資營幹部、三年級暑期擔任程式設計工讀生。目前則致力於學校畢業專題。
+			</div>
+		</div>
+		</div></a>
+		</td>
+		</tr>
+		</table>
+		</div>
+		<br>
+		</center>
+		<br><br><br>
+		</section>
+		
+		<section id="experience-section">
+		<center><table border = "0" width = "100%">
+
+				<caption><h1>經歷</h1><hr width = "50%"><br></caption>
+				<tr>
+					<th width = "33.3%">高中擔任電算社幹部</th>
+					<th width = "33.3%">大學曾任電資營工作人員</th>
+					<th width = "33.3%">大學時期擔任運動代表隊隊長</th>
+				</tr>
+				<tr>
+					<td><br><c>電算社會每週選出教課幹部，負責尋找電資相關主題教授給社員，並有在暑假與他校合辦電資營。</c></td>
+					<td><br><c>與電機、通訊系合辦，帶領高中生認識大學電資相關科系的特色，並有規劃科技產業參訪，以及邀請產業相關人士、教授演講。</c></td>
+					<td><br><c>藉由擔任代表隊隊長，不僅學習如何帶領一個團隊，更學到許多平日生活上接觸不到的事物，最重要的是與教練、隊友間的互動與關係。</c></td>
+				</tr>
+		</table></center>
+		<br><br><br>
+		</section>
+		
+		<section id="skills-section" style="background-color:white;color:black;">
+		<center><table border = "0" width = "100%">
+				<caption><h1 style = "color:black;">專業技能</h1><hr width = "50%"><br></caption>
+				<tr>
+					<th width = "25%"><img src = "java.png" class = "animation tossing" style = "width: 100px; height: 100px;"></th>
+					<th width = "25%"><img src = "html.png" class = "animation tossing" style = "width: 100px; height: 100px;"></th>
+					<th width = "25%"><img src = "sql.png" class = "animation tossing" style = "width: 100px; height: 100px;"></th>
+					<th width = "25%"><img src = "C++.png" class = "animation tossing" style = "width: 100px; height: 100px;"></th>
+				</tr>
+				<tr>
+					<th><label style = "color:black;"><br>JAVA</label></th>
+					<th><label style = "color:black;"><br>HTML5</label></th>
+					<th><label style = "color:black;"><br>MySQL</label></th>
+					<th><label style = "color:black;"><br>C++</label></th>
+				</tr>
+				<tr>
+					<td><label style = "color:black;">是一種廣泛使用的電腦程式設計語言，擁有跨平台、物件導向、泛型程式設計的特性，廣泛應用於企業級Web應用開發和行動應用開發。</label></td>
+					<td><label style = "color:black;">是一種基礎技術，常與CSS、JavaScript一起被眾多網站用於設計令人賞心悅目的網頁、網頁應用程式以及行動應用程式的使用者介面。</label></td>
+					<td><label style = "color:black;"><br><br>是一個開放原始碼的關聯式資料庫管理系統，原開發者為瑞典的MySQL AB公司，該公司於2008年被昇陽微系統（Sun Microsystems）收購。2009年，甲骨文公司（Oracle）收購昇陽微系統公司，MySQL成為Oracle旗下產品。</label></td>
+					<td><label style = "color:black;"><br><br>是一種廣泛使用的電腦程式設計語言。它是一種通用程式設計語言，靜態資料類型檢查，支援多重編程範式，例如程序化程式設計、資料抽象化、物件導向程式設計、泛型程式設計、基於原則設計等。</label></td>
+				</tr>
+		</table></center>
+		<br><br><br>
+		</section>
+		<section id="work-section">
+			<center>
+			<br><br><br><br>
+			<h1>作品</h1><hr width = "50%"  color="white">
+			<h2>簡易RPG遊戲</h2>
+			<label>大三上與組員共同完成的，無使用遊戲引擎，而是使用純JAVA code做出類似RPG的小遊戲</label>
+			<br>
+			<a href="https://www.youtube.com/watch?v=IBamvBraFXc&t=28s">
+			<video src="RPG遊戲試作.mp4" controls preload style="width:903px;z-index:1;"/>
+			</a><br><br><br>
+			<h2>資料庫結合網頁概念實作</h2>
+			<label>使用MySQL結合網頁做出類似商店幕後資料管理概念</label>
+			<br>
+			<a href="https://www.youtube.com/watch?v=BgGfLBdPqIk">
+			<video src="資料庫試作.mp4" controls preload style="width:903px;z-index:1;" />
+			</a>
+			</center>
+			<br><br><br>
+		</section>
+		
+		<section id="english-section" style="background-color:white;color:black;">
+			<center>
+			<br><br><br><br>
+			<h1 style="background-color:white;color:black;">英文能力</h1><hr width = "50%">
+			<h2 style="background-color:white;color:black;">TOEIC多益英語測驗<h2>
+			<a href = "http://www.toeic.com.tw/toeic_news_pub.jsp?type=4&pmid=84" target= "_blank" alt="金色證書"><img src="多益金色證書.png" class="imghover"></a>
+			</center>
+			<br><br><br>
+		</section>
+		
+		<section id="call-section">
+			<center>
+			<br><br><br><br>
+			<h1>聯絡我</h1><hr width = "50%" color="white">
+			請利用下方聯絡方式或表單寄送問題。
+			</center>
+			<br><br>
+			<form action="Mailto:hsnu131206@gmail.com" method="post" Enctype="Text/Plain" style="background-color:gray;color:white;position:absolute;right:100px;">
+				<h4>線上留言給我</h4>
+                     <div class="maildiv">
+                        <input type="text" style="width:500px;height:50px;" placeholder="你的姓名" required>
+                    </div>
+					<br>
+                    <div class="maildiv">
+                        <input type="email" style="width:500px;height:50px;" placeholder="E-mail" required>
+                    </div>
+					<br>
+                    <div class="maildiv">
+                        <input type="text" style="width:500px;height:50px;" placeholder="主題" required>
+                    </div>
+					<br>
+                    <div class="maildiv">
+                        <textarea rows="5" style="width:500px;" placeholder="留言內容" required></textarea>
+                    </div>
+					<br>
+                    <button type="submit" data-wow-delay="0.8s" style="width:70px;">寄出</button>
+					<button type="reset" data-wow-delay="0.8s" style="width:70px;">清除</button>
+					<br><br><br><br><br><br><br><br><br>
+            </form>
+			<div style="background-color:gray;color:white;position:absolute;left:100px;">
+				<label style="background-color:gray;color:white;">我的聯絡方式</label><br><br>
+				<label style="background-color:gray;color:white;"><i class="fa fa-phone"></i>&nbsp;&nbsp;
+				<label style="background-color:gray;color:white;font-family:微軟正黑體;">0918304999</label><br><br>
+				<label style="background-color:gray;color:white;"><i class="fa fa-comments"></i>&nbsp;&nbsp;
+				<label style="background-color:gray;color:white;font-family:微軟正黑體;">0918304999 ( LINE )</label><br><br>
+				<label style="background-color:gray;color:white;"><a href = "https://www.google.com/gmail/" target= "_blank"><i class="fa fa-envelope"></a></i>&nbsp;&nbsp;
+				<label style="background-color:gray;color:white;font-family:微軟正黑體;">hsnu131206@gmail.com</label><br><br>
+				<label style="background-color:gray;color:white;"><a href = "https://zh-tw.facebook.com/" target= "_blank"><i class="fa fa-facebook-square"></i></a>&nbsp;&nbsp;
+				<label style="background-color:gray;color:white;font-family:微軟正黑體;">吉天偉</label><br><br>
+			</div>
+		</section>
+		
+	</body>
+</html>
